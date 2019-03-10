@@ -83,19 +83,16 @@ export default {
 		let exifData;
 		let dataimg = this.dataimg;
 		EXIF.getData( file, function() {
-            exifData = EXIF.pretty(this);
-            if (exifData) {
-                ;
-            } else {
-                exifData = "No EXIF data " ;
-            } 
-			const elem = {Name:file.name, Size:size, Type:type, Src:src, exifData:exifData}; //создаем Объект с нужными свойствами 
-			dataimg.push(elem); //Заносим объект в массив
+          exifData = EXIF.pretty(this);
+          if (exifData) {
+             ;
+          } else {
+              exifData = "No EXIF data " ;
+          } 
+		  const elem = {Name:file.name, Size:size, Type:type, Src:src, exifData:exifData}; //создаем Объект с нужными свойствами 
+		  dataimg.push(elem); //Заносим объект в массив
 			
         }); 
-
-		
-		
 		
 	  }, 200)
 	   
